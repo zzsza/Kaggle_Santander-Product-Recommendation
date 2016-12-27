@@ -4,102 +4,51 @@ Kaggle Competition : Santander Product Recommendation
 (https://www.kaggle.com/c/santander-product-recommendation)
 
 
-## Data fields
+<div align="center">
+  <img src="https://kaggle2.blob.core.windows.net/competitions/kaggle/5558/media/santander-banner-ts-660x.png"><br><br>
+</div>
 
-Column Name	Description
+## Abstract
+[Kaggle Santander Product Recommendation Competition](https://www.kaggle.com/c/santander-product-recommendation)
 
-fecha_dato	The table is partitioned for this column
+- Host : **Santander**, British bank, wholly owned by the Spanish Santander Group.
+- Prize : $ 60,000
+- Problem : Multi-class Classification based Recommendation
+- Evaluation : [MAP@7](https://www.kaggle.com/wiki/MeanAveragePrecision)
+- Period : Oct 26 2016 ~ Dec 21 2016 (66 days)
 
-ncodpers	Customer code
+**Santander Bank** offers a lending hand to their customers through personalized product recommendations. In their second competition, Santander is challenging Kagglers to predict which products their existing customers will use in the next month based on their past behavior and that of similar customers.
 
-ind_empleado	Employee index: A active, B ex employed, F filial, N not employee, P pasive
+Competition data consists of customer data from 2015-01 ~ 2016-05 (total of 17 month timestamps) including customer's demographic information and their product purchase behavior. Competition challenges you to predict top 7 products out of 24, that each customer in the test data is most likely to purchase on 2016-06.
 
-pais_residencia	Customer's Country residence
+Evaluation metric is in MAP@7, which made the direct optimization difficult during training phase. Instead, the mlogloss was widely used among kagglers to indirectly optimize the solution.
 
-sexo	Customer's sex
+With BreakfastPirates generous sharing, using 2015-06 data-only as a training data seemed to perform pretty well in the leaderboard (reaching almost ~0.03). Single model performance was enough to place you on top of the leaderboard, since MAP@7 made the effect of ensemble relatively weak.
 
-age	Age
+As always, feature engineering seemed to be the most important factor in this competition, along with good cv scheme to reach the best hyper-parameter that squeezes the performance from the given data.
 
-fecha_alta	The date in which the customer became as the first holder of a contract in the bank
 
-ind_nuevo	New customer Index. 1 if the customer registered in the last 6 months.
+## Result
+| Submission | CV LogLoss | Public LB | Rank | Private LB | Rank |
+|:----------:|:----------:|:---------:|:----:|:----------:|:----:|
+| bare_minimum | 1.84515 | - | - | 0.0165546 | **1406** |
+| reduced version by kweonwooj | 0.9492806 | - | - | 0.0302238 | **208** |
+| best single model by kweonwooj | 0.9396864 | 0.029975 | **182** | 0.0302794 | **175** |
+| reproduced version of 8th place solution | 0.885272 | - | - | 0.0309659 | **14** |
 
-antiguedad	Customer seniority (in months)
+reproduced version of 8th place solution is a direct fork from [GitHub](https://github.com/yaxinus/santander-product-recommendation-8th-place) by Alexander Ponomarchuk and sh1ng. I added personal comments and a execution log. All credits go to the producers.
 
-indrel	1 (First/Primary), 99 (Primary customer during the month but not at the end of the month)
 
-ult_fec_cli_1t	Last date as primary customer (if he isn't at the end of the month)
-
-indrel_1mes	Customer type at the beginning of the month ,1 (First/Primary customer), 2 (co-owner ),P (Potential),3 (former primary), 4(former co-owner)
-
-tiprel_1mes	Customer relation type at the beginning of the month, A (active), I (inactive), P (former customer),R (Potential)
-
-indresi	Residence index (S (Yes) or N (No) if the residence country is the same than the bank country)
-
-indext	Foreigner index (S (Yes) or N (No) if the customer's birth country is different than the bank country)
-
-conyuemp	Spouse index. 1 if the customer is spouse of an employee
-
-canal_entrada	channel used by the customer to join
-
-indfall	Deceased index. N/S
-
-tipodom	Addres type. 1, primary address
-
-cod_prov	Province code (customer's address)
-
-nomprov	Province name
-
-ind_actividad_cliente	Activity index (1, active customer; 0, inactive customer)
-
-renta	Gross income of the household
-
-segmento	segmentation: 01 - VIP, 02 - Individuals 03 - college graduated
-
-ind_ahor_fin_ult1	Saving Account
-
-ind_aval_fin_ult1	Guarantees
-
-ind_cco_fin_ult1	Current Accounts
-
-ind_cder_fin_ult1	Derivada Account
-
-ind_cno_fin_ult1	Payroll Account
-
-ind_ctju_fin_ult1	Junior Account
-
-ind_ctma_fin_ult1	Más particular Account
-
-ind_ctop_fin_ult1	particular Account
-
-ind_ctpp_fin_ult1	particular Plus Account
-
-ind_deco_fin_ult1	Short-term deposits
-
-ind_deme_fin_ult1	Medium-term deposits
-
-ind_dela_fin_ult1	Long-term deposits
-
-ind_ecue_fin_ult1	e-account
-
-ind_fond_fin_ult1	Funds
-
-ind_hip_fin_ult1	Mortgage
-
-ind_plan_fin_ult1	Pensions
-
-ind_pres_fin_ult1	Loans
-
-ind_reca_fin_ult1	Taxes
-
-ind_tjcr_fin_ult1	Credit Card
-
-ind_valo_fin_ult1	Securities
-
-ind_viv_fin_ult1	Home Account
-
-ind_nomina_ult1	Payroll
-
-ind_nom_pens_ult1	Pensions
-
-ind_recibo_ult1	Direct Debit
+## Winnig Solutions
+- 1st place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26835/1-solution) by idle_speculation
+- 2nd place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26824/2nd-place-solution), [GitHub](https://github.com/ttvand/Santander-Product-Recommendation) by Tom Van de Wiele
+- 3rd place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26899/3rd-place-solution-with-code) by Jack (Japan)
+- 4th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26845/4th-place-solution) by yoniko
+- 5th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26786/solution-sharing) by BreakfastPirate, on [Forum](https://www.kaggle.com/forums/f/1789/santander-product-recommendation/t/26841/5-solution), [GitHub](https://github.com/jturkewitz/SideProjects/tree/master/Kaggle/Santander_Prod) by Jared Turkewitz
+- 7th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26802/7-solution) by Evgeny Patekha
+- 8th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26838/8-solution-code), [GitHub](https://github.com/yaxinus/santander-product-recommendation-8th-place) by Alexander Ponomarchuk and sh1ng
+- 9th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26809/9-solution) by raddar and Davut Polat
+- 11th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26823/11-solution-and-code), [GitHub](https://github.com/rohanrao91/Kaggle_SantanderProductRecommendation) by SRK and Rohan Rao
+- 13th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26816/13-solution-sharing) by Sameh Faidi
+- 14th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26808/some-ideas-from-my-solution) by alijs
+- 20th place solution on [Forum](https://www.kaggle.com/c/santander-product-recommendation/forums/t/26785/aj-and-matt-s-solution-details), [GitHub](https://github.com/apryor6/Kaggle-Competition-Santander) by Alan (AJ) Pryor, Jr. and Matt Mills
