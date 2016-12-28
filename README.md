@@ -30,6 +30,7 @@ As always, feature engineering seemed to be the most important factor in this co
 
 ## Result
 | Submission | CV LogLoss | Public LB | Rank | Private LB | Rank |
+|:----------:|:----------:|:---------:|:----:|:----------:|:----:|
 | using random forest| 1.3096864 | 0.0274853 | **606** | 0.0277286 | **600** |
 | reproduced version of 8th place solution | 0.885272 | - | - | 0.0309659 | **14** |
 
