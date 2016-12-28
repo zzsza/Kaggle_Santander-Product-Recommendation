@@ -30,10 +30,7 @@ As always, feature engineering seemed to be the most important factor in this co
 
 ## Result
 | Submission | CV LogLoss | Public LB | Rank | Private LB | Rank |
-|:----------:|:----------:|:---------:|:----:|:----------:|:----:|
-| bare_minimum | 1.84515 | - | - | 0.0165546 | **1406** |
-| reduced version by kweonwooj | 0.9492806 | - | - | 0.0302238 | **208** |
-| best single model by kweonwooj | 0.9396864 | 0.029975 | **182** | 0.0302794 | **175** |
+| using random forest| 1.3096864 | 0.0274853 | **606** | 0.0277286 | **600** |
 | reproduced version of 8th place solution | 0.885272 | - | - | 0.0309659 | **14** |
 
 reproduced version of 8th place solution is a direct fork from [GitHub](https://github.com/yaxinus/santander-product-recommendation-8th-place) by Alexander Ponomarchuk and sh1ng. I added personal comments and a execution log. All credits go to the producers.
