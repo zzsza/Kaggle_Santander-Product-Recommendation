@@ -5,7 +5,7 @@ Kaggle Competition : Santander Product Recommendation
 
 
 <div align="center">
-  <img src="https://kaggle2.blob.core.windows.net/competitions/kaggle/5558/media/santander-banner-ts-660x.png"><br><br>
+  <img src="https://storage.googleapis.com/kaggle-competitions/kaggle/5558/media/santander-banner-ts-660x.png"><br><br>
 </div>
 
 ## Abstract
